@@ -40,26 +40,10 @@ public class Project04 {
         String str2 = "I like idiot behaviors";
         String str1 = "I had some stupid t-shirts in the past and also some idiot look shoes";
 
-        if (str1.contains("stupid") || str1.contains("idiot")) {
-            str1 = str1.replaceAll("stupid", "nice");
-            str1 = str1.replaceAll("idiot", "nice");
-            System.out.println(str1);
-        }
-        else System.out.println(str1);
 
-        if (str2.contains("stupid") || str2.contains("idiot")) {
-            str2 = str2.replaceAll("stupid", "nice");
-            str2 = str2.replaceAll("idiot", "nice");
-            System.out.println(str2);
-        }
-        else System.out.println(str2);
-
-        if (str3.contains("stupid") || str3.contains("idiot")) {
-            str3 = str3.replaceAll("stupid", "nice");
-            str3 = str3.replaceAll("idiot", "nice");
-            System.out.println(str3);
-        }
-        else System.out.println(str3);
+        System.out.println(str1.replace("stupid", "nice").replace("idiot", "nice"));
+        System.out.println(str2.replace("stupid", "nice").replace("idiot", "nice"));
+        System.out.println(str3.replace("stupid", "nice").replace("idiot", "nice"));
 
         System.out.println("--------Task-4--------");
 
