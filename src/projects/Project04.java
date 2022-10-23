@@ -36,9 +36,9 @@ public class Project04 {
 
         System.out.println("--------Task-3--------");
 
-        String str3 = "These books are so stupid";
+        String str1 = "These books are so stupid";
         String str2 = "I like idiot behaviors";
-        String str1 = "I had some stupid t-shirts in the past and also some idiot look shoes";
+        String str3 = "I had some stupid t-shirts in the past and also some idiot look shoes";
 
 
         System.out.println(str1.replace("stupid", "nice").replace("idiot", "nice"));
@@ -68,18 +68,11 @@ public class Project04 {
 
         String address = ScannerHelper.getAnAddress();
 
-        for (int i = 0; i < address.length(); i++) {
-            if (address.charAt(i) == 'a' || address.charAt(i) == 'A')
-                address = address.replace(address.charAt(i), '*');
-            else if (address.charAt(i) == 'e' || address.charAt(i) == 'E')
-                address = address.replace(address.charAt(i), '#');
-            else if (address.charAt(i) == 'i' || address.charAt(i) == 'I')
-                address = address.replace(address.charAt(i), '+');
-            else if (address.charAt(i) == 'u' || address.charAt(i) == 'U')
-                address = address.replace(address.charAt(i), '$');
-            else if (address.charAt(i) == 'o' || address.charAt(i) == 'O')
-                address = address.replace(address.charAt(i), '@');
-        }
+        address = address.replace('a', '*').replace('A','*').
+                replace('e','#').replace('E', '#').
+                replace('i','+').replace('I','+').
+                replace('u','$').replace('U','$').
+                replace('o','@').replace('O', '@');
         System.out.println(address);
 
         System.out.println("--------Task-7--------");
