@@ -2,11 +2,11 @@ package arrays;
 
 public class _14_SecondGreatest_SecondSmallest {
     public static void main(String[] args) {
-        /*
-    create a public static method which will take an int array, find the max, second max and min, second min
+    /*
+    create a public static method which will take an int array,
+    - find the max and min
+    - second max and second min
     from that array then print them out.
-    Hint: Find the max and min FIRST.
-    Note: Do it with sort and without sort.
     Example:
        Array -> int[] numbers = {2, 3, 7, 1, 1, 7};
     Output:
@@ -14,15 +14,13 @@ public class _14_SecondGreatest_SecondSmallest {
         second max = 3
         min = 1
         second min= 2
- */
+    */
         int[] numbers = {2, 3, 7, 1, 1, 7};
         int[] numbers2 = {10, -3, -7, 0, 0, 7, 22};
         int[] numbers3 = {10, -3, 7, 1, 22};
         secondMaxSecondMin(numbers);
         secondMaxSecondMin(numbers2);
         secondMaxSecondMin(numbers3);
-
-
     }
 
     public static void secondMaxSecondMin(int[] numbers){
