@@ -1,6 +1,5 @@
 package homeworks;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class Homework06 {
@@ -91,7 +90,7 @@ public class Homework06 {
                 countUpper++;
             else if(Character.isDigit(character))
                 countDigit++;
-            else countSpecial++;
+            else if(!Character.isWhitespace(character)) countSpecial++;
             }
 
         System.out.println(Arrays.toString(characters));
