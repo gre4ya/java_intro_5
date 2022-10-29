@@ -66,7 +66,10 @@ public class _02_StringArrayList {
 
         System.out.println("\n------------Task-5------------\n");
 
-        cities.clear();
+        // remove all elements
+
+        //cities.clear();
+        cities.removeAll(cities);
         System.out.println(cities);
         System.out.println(cities.size());
 
