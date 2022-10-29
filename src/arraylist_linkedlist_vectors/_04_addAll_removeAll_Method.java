@@ -30,5 +30,8 @@ public class _04_addAll_removeAll_Method {
         allStudents.addAll(0, group2Students);
         System.out.println(allStudents); // [John, Jane, James, Alex, Mike, Leo, Lucy, Lucio]
 
+        System.out.println(allStudents.removeAll(group1Students)); // true
+        System.out.println(allStudents); // [John, Jane, James, Leo, Lucy, Lucio]
+
     }
 }
