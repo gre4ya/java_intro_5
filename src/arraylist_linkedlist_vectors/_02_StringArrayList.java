@@ -43,15 +43,32 @@ public class _02_StringArrayList {
 
         System.out.println("\n------------Task-4------------\n");
 
+        /*
+        TASK
+        Add below cities to ArrayList
+        New York
+        Rome
+        Gent
+
+        Print the ArrayList
+        Print the size
+
+        EXPECTED:
+        [Evanston, New York, Rome, Ghent]
+        4
+         */
+
         cities.add("New York");
         cities.add("Rome");
-        cities.add("Gent");
+        cities.add("Ghent");
         System.out.println(cities);
         System.out.println(cities.size());
 
+        System.out.println("\n------------Task-5------------\n");
 
-
-
+        cities.clear();
+        System.out.println(cities);
+        System.out.println(cities.size());
 
 
 
