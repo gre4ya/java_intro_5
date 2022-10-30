@@ -52,5 +52,35 @@ public class Exercise01_countElements {
                 count++;
         }
         System.out.println(count);
+
+        count = 0;
+        for (int i = 0; i < colors.size(); i++) {
+            if(colors.get(i).length() == 6) count++;
+        }
+        System.out.println(count);
+
+        /*
+         Count the elements has 'o'
+         //Brown and Yellow
+         EXPECTED:
+         2
+          */
+
+        System.out.println("-----------Task-3-----------");
+
+        count = 0;
+        for (String color : colors) {
+            if(color.toLowerCase().contains("o")) count++;
+        }
+        System.out.println(count);
+
+        count = 0;
+        for (int i = 0; i < colors.size(); i++) {
+            if(colors.get(i).toLowerCase().contains("o")) count ++;
+        }
+        System.out.println(count);
+
+
+
     }
 }
