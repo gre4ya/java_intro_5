@@ -1,6 +1,5 @@
 package projects;
 
-import javax.xml.transform.Source;
 import java.util.Arrays;
 
 public class Project05 {
@@ -46,8 +45,10 @@ public class Project05 {
     ///////////////////////Task-2////////////////////////
 
     public static void  findGreatestAndSmallest(int[] numbers){
+
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
+
         for (int number : numbers) {
             if(number > max)
                 max = number;
@@ -59,13 +60,16 @@ public class Project05 {
     }
     ///////////////////////Task-3////////////////////////
 
-    public static void  findSecondGreatestAndSmallestWithSor(int[] numbers){
+    public static void findSecondGreatestAndSmallestWithSor(int[] numbers){
+
         Arrays.sort(numbers);
+
         int min = numbers[0];
-        int max = numbers[numbers.length-1];
+        int max = numbers[numbers.length - 1];
         int secondMax = Integer.MIN_VALUE;
         int secondMin = Integer.MAX_VALUE;
-        for (int i = 0; i < numbers.length - 1; i++) {
+
+        for (int i = 0; i < numbers.length; i++) {
             if(secondMax < numbers[i] && numbers[i] != max)
                 secondMax = numbers[i];
             if(secondMin > numbers[i] && numbers[i] != min)
@@ -77,8 +81,10 @@ public class Project05 {
     ///////////////////////Task-4////////////////////////
 
     public static void  findSecondGreatestAndSmallest(int[] numbers){
+
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
+
         for (int i = 0; i < numbers.length - 1; i++) {
             if(numbers[i] > max)
                 max = numbers[i];
@@ -87,10 +93,11 @@ public class Project05 {
         }
         int secondMax = Integer.MIN_VALUE;
         int secondMin = Integer.MAX_VALUE;
+
         for (int i = 0; i < numbers.length - 1; i++) {
-            if(secondMax < numbers[i] && numbers[i] != max)
+            if(numbers[i] > secondMax && numbers[i] != max)
                 secondMax = numbers[i];
-            if(secondMin > numbers[i] && numbers[i] != min)
+            if(numbers[i] < secondMin && numbers[i] != min)
                 secondMin = numbers[i];
         }
         System.out.println("Second Smallest = " + secondMin);
@@ -99,7 +106,9 @@ public class Project05 {
     ///////////////////////Task-5////////////////////////
 
     public static void findDuplicatedElementsInAnArray(String[] words){
-    String duplicates = "";
+
+        String duplicates = "";
+
         for (int i = 0; i < words.length - 1; i++) {
             for (int j = i + 1; j < words.length; j++) {
                 if(duplicates.contains(words[i] + "")) break;
@@ -107,16 +116,18 @@ public class Project05 {
                     duplicates += words[j] + "\n";
             }
         }
-    System.out.println(duplicates.substring(0, duplicates.length()-1));
+        System.out.println(duplicates.substring(0, duplicates.length()-1));
     }
     ///////////////////////Task-6////////////////////////
 
     public static void findMostRepeatedElementInAnArray(String[] classStaff){
+
         String mostRepeated = "";
+
         int freq = 0;
-        for (int i = 0; i < classStaff.length; i++) {
-            int count = 0;
-            for (int j = i + 1; j < classStaff.length; j++) {
+        int count = 0;
+
+        for (int i = 0, j = i + 1; i < classStaff.length - 1; i++, j++) {
                 if(classStaff[j].equals(classStaff[i])){
                     count++;
                 }
@@ -124,7 +135,6 @@ public class Project05 {
                     mostRepeated = classStaff[i];
                     freq = count;
                 }
-            }
         }
         System.out.println(mostRepeated);
     }

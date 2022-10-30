@@ -1,8 +1,7 @@
 package homeworks;
 
-import javax.swing.plaf.IconUIResource;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Homework07 {
@@ -87,9 +86,69 @@ public class Homework07 {
         System.out.println(avengers);
         System.out.println(avengers.contains("Hulk") && avengers.contains("Iron Man"));
 
+        System.out.println("-----------Task-7-----------");
 
+        ArrayList<Character> characters = new ArrayList<>(Arrays.asList('A', 'x', '$', '%', '9', '*', '+', 'F', 'G'));
 
+        System.out.println(characters);
+        for (Character character : characters) {
+            System.out.println(character);
+        }
 
+        System.out.println("-----------Task-8-----------");
+
+        ArrayList<String> officethings = new ArrayList<>(Arrays.asList("Desk", "Laptop", "Mouse", "Monitor", "Mouse-Pad", "Adapter"));
+
+        System.out.println(officethings);
+        Collections.sort(officethings);
+        System.out.println(officethings);
+
+        int countM = 0;
+        int countAE = 0;
+
+        for (String item : officethings) {
+            if(item.toLowerCase().startsWith("m")) countM++;
+            if(!item.toLowerCase().contains("a") && !item.toLowerCase().contains("e")) countAE++;
+        }
+        System.out.println(countM);
+        System.out.println(countAE);
+
+        System.out.println("-----------Task-9-----------");
+
+        ArrayList<String> kitchenStaff = new ArrayList<>(Arrays.asList("Plate", "spoon", "fork", "Knife", "cup", "Mixer"));
+
+        System.out.println(kitchenStaff);
+        int upper = 0, lower = 0, hasP = 0, startsOrEndsP = 0;
+
+        for (String s : kitchenStaff) {
+            if(Character.isUpperCase(s.charAt(0))) upper++;
+            if(Character.isLowerCase(s.charAt(0))) lower++;
+            if(s.toLowerCase().contains("p")) {
+                hasP++;
+                if (s.toLowerCase().startsWith("p") || s.toLowerCase().endsWith("p"))
+                    startsOrEndsP++;
+            }
+        }
+        System.out.println("Elements starts with uppercase = " + upper);
+        System.out.println("Elements starts with lowercase = " + lower);
+        System.out.println("Elements having P or p = " + hasP);
+        System.out.println("Elements starting or ending with P or p = " + startsOrEndsP);
+
+        System.out.println("-----------Task-10-----------");
+
+        ArrayList<Integer> newNumbers = new ArrayList<>(Arrays.asList(3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78));
+
+        int dev10 = 0, evenGreater15 = 0, oddLess20 = 0, less15greater50 = 0;
+        System.out.println(newNumbers);
+        for (int i = 0; i < newNumbers.size(); i++) {
+            if(newNumbers.get(i) % 10 == 0) dev10++;
+            if(newNumbers.get(i) % 2 == 0 && newNumbers.get(i) > 15) evenGreater15++;
+            if(newNumbers.get(i) % 2 != 0 && newNumbers.get(i) < 20) oddLess20++;
+            if(newNumbers.get(i) < 15 || newNumbers.get(i) > 50) less15greater50++;
+        }
+        System.out.println("Elements that can be divided by 10 = " + dev10);
+        System.out.println("Elements that are even and greater than 15 = " + evenGreater15);
+        System.out.println("Elements that are odd and less than 20 = " + oddLess20);
+        System.out.println("Elements that are less than 15 or greater than 50 = " + less15greater50);
     }
-
 }
