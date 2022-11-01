@@ -16,8 +16,10 @@ public class Project05 {
         System.out.println("--------------Task-3--------------");
 
         int[] numbers1 = {10, 5, 6, 7, 8, 5, 15, 15};
+        int[] nums = {3};
 
         findSecondGreatestAndSmallestWithSor(numbers1);
+        findSecondGreatestAndSmallestWithSor(nums);
 
         System.out.println("--------------Task-4--------------");
 
@@ -64,20 +66,24 @@ public class Project05 {
 
         Arrays.sort(numbers);
 
-        int min = numbers[0];
-        int max = numbers[numbers.length - 1];
+        if(numbers.length > 1) {
 
-        int secondMax = Integer.MIN_VALUE;
-        int secondMin = Integer.MAX_VALUE;
+            int min = numbers[0];
+            int max = numbers[numbers.length - 1];
 
-        for (int i = 0; i < numbers.length; i++) {
-            if(secondMax < numbers[i] && numbers[i] != max)
-                secondMax = numbers[i];
-            if(secondMin > numbers[i] && numbers[i] != min)
-                secondMin = numbers[i];
+            int secondMax = Integer.MIN_VALUE;
+            int secondMin = Integer.MAX_VALUE;
+
+            for (int number : numbers) {
+                if (secondMax < number && number != max)
+                    secondMax = number;
+                if (secondMin > number && number != min)
+                    secondMin = number;
+            }
+            System.out.println("Second Smallest = " + secondMin);
+            System.out.println("Second Greatest = " + secondMax);
         }
-        System.out.println("Second Smallest = " + secondMin);
-        System.out.println("Second Greatest = " + secondMax);
+        else System.out.println("Array is invalid");
     }
     ///////////////////////Task-4////////////////////////
 
