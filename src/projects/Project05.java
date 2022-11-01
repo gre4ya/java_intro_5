@@ -66,6 +66,7 @@ public class Project05 {
 
         int min = numbers[0];
         int max = numbers[numbers.length - 1];
+
         int secondMax = Integer.MIN_VALUE;
         int secondMin = Integer.MAX_VALUE;
 
