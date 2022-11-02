@@ -15,7 +15,8 @@ public class Project04 {
             String middle = str.substring(4, str.length() - 4);
             String last4 = str.substring(str.length() - 4);
             System.out.println(last4 + middle + first4);
-        } else System.out.println("This String does not have 8 characters");
+        }
+        else System.out.println("This String does not have 8 characters");
 
         System.out.println("--------Task-2--------");
 

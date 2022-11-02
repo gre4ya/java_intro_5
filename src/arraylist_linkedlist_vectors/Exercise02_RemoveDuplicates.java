@@ -17,10 +17,11 @@ public class Exercise02_RemoveDuplicates {
         System.out.println(new HashSet<>(languages));
 
 
-        for (int i = 0; i < languages.size()-1; i++) {
-            for (int j = i + 1; j < languages.size(); j++) {
-                if(languages.get(i).equals(languages.get(j)))
+        for (int i = 0, j = i + 1; i < languages.size() - 1; i++, j++) {
+            //for (int j = i + 1; j < languages.size(); j++) {
+                if(languages.get(i).equals(languages.get(j))) {
                     languages.remove(languages.get(j));
+                   j--;
             }
         }
         System.out.println(languages);
