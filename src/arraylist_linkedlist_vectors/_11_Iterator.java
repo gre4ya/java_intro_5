@@ -5,14 +5,16 @@ import java.util.Iterator;
 
 public class _11_Iterator {
     public static void main(String[] args) {
+
         ArrayList<String> foods = new ArrayList<>();
-        foods.add("Pizza");
-        foods.add("Pasta");
-        foods.add("Burger");
-        foods.add("Lamb chops");
-        foods.add("Salad");
-        foods.add("Falafel");
-        foods.add("Sushi");
+
+          foods.add("Pizza");
+          foods.add("Pasta");
+          foods.add("Burger");
+          foods.add("Lamb chops");
+          foods.add("Salad");
+          foods.add("Falafel");
+          foods.add("Sushi");
 
         Iterator<String> foodsIterator = foods.iterator();
         while(foodsIterator.hasNext()){
