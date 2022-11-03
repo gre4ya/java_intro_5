@@ -122,12 +122,14 @@ public class Homework07 {
 
         for (String s : kitchenStaff) {
             if(Character.isUpperCase(s.charAt(0))) upper++;
-            if(Character.isLowerCase(s.charAt(0))) lower++;
-            if(s.toLowerCase().contains("p")) {
+            else lower++;
+            if (s.toLowerCase().startsWith("p") || s.toLowerCase().endsWith("p")) {
                 hasP++;
-                if (s.toLowerCase().startsWith("p") || s.toLowerCase().endsWith("p"))
-                    startsOrEndsP++;
-            }
+                startsOrEndsP++;
+                }
+            else if(s.toLowerCase().contains("p"))
+                hasP++;
+
         }
         System.out.println("Elements starts with uppercase = " + upper);
         System.out.println("Elements starts with lowercase = " + lower);
@@ -140,15 +142,39 @@ public class Homework07 {
 
         int dev10 = 0, evenGreater15 = 0, oddLess20 = 0, less15greater50 = 0;
         System.out.println(newNumbers);
-        for (int i = 0; i < newNumbers.size(); i++) {
-            if(newNumbers.get(i) % 10 == 0) dev10++;
-            if(newNumbers.get(i) % 2 == 0 && newNumbers.get(i) > 15) evenGreater15++;
-            if(newNumbers.get(i) % 2 != 0 && newNumbers.get(i) < 20) oddLess20++;
-            if(newNumbers.get(i) < 15 || newNumbers.get(i) > 50) less15greater50++;
+        for (Integer newNumber : newNumbers) {
+            if (newNumber % 10 == 0) dev10++;
+            if (newNumber % 2 == 0 && newNumber > 15) evenGreater15++;
+            if (newNumber % 2 != 0 && newNumber < 20) oddLess20++;
+            if (newNumber < 15 || newNumber > 50) less15greater50++;
         }
+
+//        dev10 = 0; evenGreater15 = 0; oddLess20 = 0; less15greater50 = 0;
+//
+//        for (Integer newNumber : newNumbers) {
+//            if(newNumber % 2 == 0){
+//                if(newNumber > 15) evenGreater15++;
+//                if(newNumber % 10 == 0) dev10++;
+//            }
+//            else if(newNumber < 20) oddLess20++;
+//            if (newNumber < 15 || newNumber > 50) less15greater50++;
+        //}
+       // dev10 = 0; evenGreater15 = 0; oddLess20 = 0; less15greater50 = 0;
+
+
+
         System.out.println("Elements that can be divided by 10 = " + dev10);
         System.out.println("Elements that are even and greater than 15 = " + evenGreater15);
         System.out.println("Elements that are odd and less than 20 = " + oddLess20);
         System.out.println("Elements that are less than 15 or greater than 50 = " + less15greater50);
+        System.out.println("==================================================================");
+
+        System.out.println("Elements that can be divided by 10 = " + newNumbers.stream().filter(x -> x % 10 == 0).count());
+        System.out.println("Elements that are even and greater than 15 = " + newNumbers.stream().filter(x -> x % 2 == 0 & x > 15).count());
+        System.out.println("Elements that are odd and less than 20 = " + newNumbers.stream().filter(x -> x % 2 != 0 & x < 20).count());
+        System.out.println("Elements that are less than 15 or greater than 50 = " + newNumbers.stream().filter(x -> x < 15 | x > 50).count());
+
+
+
     }
 }
