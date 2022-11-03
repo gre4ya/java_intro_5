@@ -6,7 +6,11 @@ import java.util.ArrayList;
 
 public class Contains2Or3 {
     public static void main(String[] args) {
+
+        System.out.println("Contains 2 or 3");
         System.out.println(isContaining2Or3());
+
+        System.out.println("Contains 7 or 13");
         System.out.println(isContaining7Or13());
     }
     /*
