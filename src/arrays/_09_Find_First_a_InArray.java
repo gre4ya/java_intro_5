@@ -46,6 +46,6 @@ public class _09_Find_First_a_InArray {
            }
        }
        System.out.println(!firstA.isEmpty() ? "First string with \"a\" = " + "\"" + firstA + "\"" :
-               "No string string with \"a\"");
+               "No String starting with \"a\"");
    }
 }

@@ -13,26 +13,20 @@ public class _11_Find_Longest_Shortest {
      */
 
         String[] colors = {"red", "blue", "yellow", "white"};
-        String[] colors2 = {"redvelvet ", "i", "red", "blue", "yellow", "white"};
+        String[] colors2 = {"i", "red velvet", "red", "blue", "yellow", "white"};
         findingLongestAndShortest(colors);
         findingLongestAndShortest(colors2);
     }
-
-
     public static void findingLongestAndShortest(String[] str){
-        String longest = "";
-        String shortest = "";
-        boolean isLongest = false, isShortest = false;
+        String longest = str[0];
+        String shortest = str[0];
 
-        for (int i = 0; i < str.length - 1; i++) {
-            if(!isShortest && str[i].length() < str[i + 1].length()) {
-                shortest = str[i];
-                isShortest = true;
-            }
-            else if(!isLongest && str[i].length() > str[i + 1].length()) {
-                longest = str[i];
-                isLongest = true;
-            }
+        for (String s : str) {
+            if (s.length() < shortest.length())
+                shortest = s;
+
+            if (s.length() > longest.length())
+                longest = s;
         }
         System.out.println("Shortest = " + shortest);
         System.out.println("Longest = " + longest);

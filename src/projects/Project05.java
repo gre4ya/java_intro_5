@@ -131,17 +131,17 @@ public class Project05 {
 
     public static void findMostRepeatedElementInAnArray(String[] classStaff){
 
-        int index = 0, freq = 0, count = 0;
+       int index = 0, freq = 0, count = 0;
 
         for (int i = 0, j = i + 1; i < classStaff.length - 1; i++, j++) {
-                if(classStaff[j].equals(classStaff[i])){
-                    count++;
-                }
-                if(count >= freq) {
-                    index = i;
-                    freq = count;
-                    count = 0;
-                }
+            if(classStaff[j].equals(classStaff[i])){
+              count++;
+            }
+            if(count >= freq) {
+              index = i;
+              freq = count;
+              count = 0;
+            }
         }
         System.out.println(classStaff[index]);
     }
