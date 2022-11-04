@@ -14,8 +14,6 @@ public class FindCommonElements {
         commonElementsInTwoArrayLists(numbers1, numbers2);
         commonElementsInTwoArrayLists(numbers3, numbers4);
 
-
-
     }
 
 

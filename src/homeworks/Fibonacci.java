@@ -24,6 +24,19 @@ public class Fibonacci {
             }
             System.out.println("0 - 1 - " + fibonacci.substring(0, fibonacci.length() - 3));
         }
+        // 0 - 1 - 1 - 2 - 3 - 5 - 8
+        int first = 0;
+        int second = 1;
+        int sum;
+        int input = 3;
+        String answer = "";
+        for (int i = 0; i < 2; i++) {    // i = 0      | i = 1
+            answer += first + " - ";     // 0 -        | 0 - 1 -
+            sum = first + second;        // 0 + 1 = 1  | 2
+            first = second;              // 1          | 1
+            second = sum;                // 1          | 2
+        }
+        System.out.println(answer.substring(0, answer.length() - 3));
 
         System.out.println("--------while solution--------");
 
@@ -36,7 +49,7 @@ public class Fibonacci {
             String fibonacci = "";
             int a = 0;
             int b = 1;
-            int sum;
+            sum = 0;
 
                 while(j <= number - 2) {
                     sum = a + b;
@@ -53,7 +66,7 @@ public class Fibonacci {
         int secondNum = 1;
         int nextNum;
 
-        String answer = "";
+        answer = "";
 
         for (int k = 0; k < givenNum; k++) {
             answer += firstNum + " - ";
@@ -63,5 +76,20 @@ public class Fibonacci {
         }
         System.out.println(answer.substring(0, answer.length() - 3));
 
+        System.out.println("===========================================");
+
+        first = 0;
+        second = 1;
+        sum = 0;
+        answer = "";
+        int i = 0;
+        while (i < input){
+            answer += first + " - ";
+            sum = first + second;
+            first = second;
+            second = sum;
+            i++;
+        }
+        System.out.println(answer.substring(0, answer.length() - 3));
     }
 }

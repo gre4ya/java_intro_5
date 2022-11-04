@@ -67,12 +67,12 @@ public class Homework07 {
         ArrayList<String> marvelHeroes = new ArrayList<>();
           marvelHeroes.add("Spider Man");
           marvelHeroes.add("Iron Man");
-          marvelHeroes.add("Black Panter");
+          marvelHeroes.add("Black Panther");
           marvelHeroes.add("Deadpool");
           marvelHeroes.add("Captain America");
 
         System.out.println(marvelHeroes);
-        System.out.println(marvelHeroes.contains("Wolwerine"));
+        System.out.println(marvelHeroes.contains("Wolverine"));
 
         System.out.println("-----------Task-6-----------");
 
@@ -112,6 +112,9 @@ public class Homework07 {
         }
         System.out.println(countM);
         System.out.println(countAE);
+//        System.out.println(officethings.stream().filter(x -> x.toLowerCase().startsWith("m")).count());
+//        System.out.println(officethings.stream().filter(x -> !x.toLowerCase().contains("a") && !x.toLowerCase().contains("e")).count());
+//        System.out.println(officethings.stream().filter(x -> Character.isUpperCase(x.charAt(0))).count());
 
         System.out.println("-----------Task-9-----------");
 
@@ -123,18 +126,32 @@ public class Homework07 {
         for (String s : kitchenStaff) {
             if(Character.isUpperCase(s.charAt(0))) upper++;
             else lower++;
-            if (s.toLowerCase().startsWith("p") || s.toLowerCase().endsWith("p")) {
+//            if (s.toLowerCase().startsWith("p") || s.toLowerCase().endsWith("p")) {
+//                hasP++;
+//                startsOrEndsP++;
+//                }
+//            else if(s.toLowerCase().contains("p"))
+//                hasP++;
+            if(s.toLowerCase().contains("p")){
                 hasP++;
-                startsOrEndsP++;
-                }
-            else if(s.toLowerCase().contains("p"))
-                hasP++;
+                if(s.toLowerCase().startsWith("p") || s.toLowerCase().endsWith("p")) startsOrEndsP++;
+            }
 
         }
         System.out.println("Elements starts with uppercase = " + upper);
         System.out.println("Elements starts with lowercase = " + lower);
         System.out.println("Elements having P or p = " + hasP);
         System.out.println("Elements starting or ending with P or p = " + startsOrEndsP);
+
+        System.out.println("=============================================================");
+        System.out.println("Elements starts with uppercase = " +
+                kitchenStaff.stream().filter(x -> Character.isUpperCase(x.charAt(0))).count());
+        System.out.println("Elements starts with lowercase = " +
+                kitchenStaff.stream().filter(x -> Character.isLowerCase(x.charAt(0))).count());
+        System.out.println("Elements having P or p = " +
+                kitchenStaff.stream().filter(x -> x.toLowerCase().contains("p")).count());
+        System.out.println("Elements starting or ending with P or p = " +
+                kitchenStaff.stream().filter(x -> x.toLowerCase().startsWith("p") || x.toLowerCase().endsWith("p")).count());
 
         System.out.println("-----------Task-10-----------");
 
@@ -167,6 +184,7 @@ public class Homework07 {
         System.out.println("Elements that are even and greater than 15 = " + evenGreater15);
         System.out.println("Elements that are odd and less than 20 = " + oddLess20);
         System.out.println("Elements that are less than 15 or greater than 50 = " + less15greater50);
+
         System.out.println("==================================================================");
 
         System.out.println("Elements that can be divided by 10 = " + newNumbers.stream().filter(x -> x % 10 == 0).count());
