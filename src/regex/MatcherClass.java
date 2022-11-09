@@ -72,5 +72,14 @@ public class MatcherClass {
         }
         System.out.println("This sentence contains " + wordCount + " words");
 
+        /*
+        Write a regex pattern with the conditions below:
+        • Must be more than 8 characters.
+        • Must be no more than 15 characters.
+        • Could include letters(Upper and Lower), numbers, _, and -
+         */
+
+        System.out.println(Pattern.matches("[A-Za-z0-9-_]{9,15}", "Tech_Global")); // true
+
     }
 }
