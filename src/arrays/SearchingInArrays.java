@@ -29,7 +29,7 @@ public class SearchingInArrays {
         System.out.println("-----------Binary search in array-----------");
 
         //NOTE: Binary search can be used if array is sorted ONLY, otherwise you will get wrong result
-        // Binary search return the index of the element is found
+        // Binary search return the index of the element if found
         // if there are more than 1 element in array, it returns the index of last element
 
         Arrays.sort(numbers);

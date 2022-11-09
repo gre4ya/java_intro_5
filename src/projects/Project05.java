@@ -1,5 +1,6 @@
 package projects;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Project05 {
@@ -114,18 +115,18 @@ public class Project05 {
 
     public static void findDuplicatedElementsInAnArray(String[] words){
 
-        String duplicates = "";
-
+        ArrayList<String> duplicates = new ArrayList<>();
         for (int i = 0; i < words.length - 1; i++) {
             for (int j = i + 1; j < words.length; j++) {
                 // if(duplicates.contains(words[i] + "")) break;
                 if(words[i].equals(words[j]) && !duplicates.contains(words[i])){
-                    duplicates += words[j] + "\n";
+                    duplicates.add(words[j]);
                     break;
                 }
             }
         }
-       System.out.println(duplicates.substring(0, duplicates.length()-1));
+       duplicates.forEach(System.out::println);
+        System.out.println("words = " + Arrays.toString(words));
     }
     ///////////////////////Task-6////////////////////////
 

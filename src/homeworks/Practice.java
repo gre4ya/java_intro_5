@@ -1,7 +1,10 @@
 package homeworks;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Practice {
-    public static void main(String[] args) {
+    public static <ArraysList> void main(String[] args) {
         //String str = "AxyzBBB";
         //System.out.println(Practice.xyzMiddle(str));
 
@@ -21,6 +24,11 @@ public class Practice {
         }
 
         System.out.println(newStr);
+
+
+        String str1 = "Hello World";
+        ArrayList<String> STR1 = new ArrayList<>(Arrays.asList(str1.split(" ")));
+        System.out.println(STR1);
 
 
     }

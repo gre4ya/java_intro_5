@@ -57,11 +57,5 @@ public class _05_containsAll_retainsAll_Method {
 
         System.out.println(countries); // [Italy, Germany, Spain, Portugal, Sweden]
 
-
-
-
-
-
-
     }
 }

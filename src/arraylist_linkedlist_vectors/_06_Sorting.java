@@ -28,15 +28,15 @@ public class _06_Sorting {
 
         System.out.println("--------Before-Sort--------");
 
-        System.out.println(numbers);
-        System.out.println(words);
+        System.out.println(numbers); // [10, -3, 5, 15]
+        System.out.println(words);   // [Remote, Phone, Laptop]
 
         Collections.sort(numbers);
         Collections.sort(words);
 
         System.out.println("--------After-Sort--------");
 
-        System.out.println(numbers);
-        System.out.println(words);
+        System.out.println(numbers);  // [-3, 5, 10, 15]
+        System.out.println(words);    // [Laptop, Phone, Remote]
     }
 }
