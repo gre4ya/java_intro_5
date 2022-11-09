@@ -1,5 +1,7 @@
 package regex;
 
+import utilities.ScannerHelper;
+
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
@@ -25,6 +27,16 @@ public class PatternClass {
         pattern = Pattern.compile(" [a-z0-9]{5,10}");
         String[] arr2 = str2.split(pattern.pattern());
         System.out.println(Arrays.toString(arr2)); // [I go to,  at TechGlobal and I love it]
+
+        pattern = Pattern.compile("[a-zA-Z0-9]{5,10}");
+        String name = ScannerHelper.getAName();
+        System.out.println(Pattern.matches(pattern.pattern(), name) ? "Valid Username" :
+                "Error! Username must be 5 to 10 characters long and can only contain letters and numbers");
+
+        System.out.println(name.matches("[a-zA-Z0-9]{5,10}")); // false
+
+
+
 
 
     }
