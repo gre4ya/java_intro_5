@@ -51,4 +51,8 @@ public class ScannerHelper {
 
         return number;
     }
+    public static String getASentence(){
+        System.out.println("Please enter a sentence");
+        return input.nextLine();
+    }
 }

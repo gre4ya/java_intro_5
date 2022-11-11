@@ -51,8 +51,7 @@ public class MatcherClass {
         my
         name
         is
-        john
-        doe
+        John
         This sentence contains 6 words
         Scenario 2:
         Program: Please enter a username
