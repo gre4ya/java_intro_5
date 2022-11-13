@@ -84,7 +84,8 @@ public class Homework08 {
         for (int i = 0; i < str.length(); i++) {
             if(String.valueOf(str.charAt(i)).matches("[a-zA-Z&&[^aeiouAEIOU]]")) counter++;
         }
-        return counter;
+        return counter; // return str.trim().toLowerCase().replaceAll("[aeiou]", "").length();
+
     }
     ///////////////////////TASK-2/////////////////////////////
     public static String[] wordArray(String str){
@@ -119,6 +120,6 @@ public class Homework08 {
     }
     ///////////////////////TASK-6/////////////////////////////
     public static boolean isEmailFormatValid(String email){
-        return Pattern.matches("[\\w]{2,}@[\\w]{2,}.[\\w]{2,}", email);
+        return Pattern.matches("[\\w]{2,}@[\\w]{2,}\\.[\\w]{2,}", email);
     }
 }
