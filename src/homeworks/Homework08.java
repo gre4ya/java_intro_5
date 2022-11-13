@@ -80,7 +80,7 @@ public class Homework08 {
     public static int countConsonants(String str){
         int counter = 0;
         for (int i = 0; i < str.length(); i++) {
-            if(String.valueOf(str.charAt(i)).matches("[a-zA-Z&&[^aeiouAEIOU]]")) counter++;
+            if(String.valueOf(str.charAt(i)).toLowerCase().matches("[a-z&&[^aeiou]]")) counter++;
         }
         return counter; // return str.trim().toLowerCase().replaceAll("[aeiou]", "").length();
 

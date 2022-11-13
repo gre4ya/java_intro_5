@@ -8,7 +8,7 @@ public class Project06 {
     public static void main(String[] args) {
         System.out.println("--------------TASK-1--------------");
 
-        String [] words = {"foo", "", " ", "foo bar", "java is fun", " ruby ", "976", "9 9"};
+        String [] words = {"foo", "", " ", "foo bar", "java_is fun", " ruby ", "976", "9 9"};
         System.out.println(countMultipleWords(words));
 
         System.out.println("--------------TASK-2--------------");
@@ -50,7 +50,6 @@ public class Project06 {
         System.out.println(validateEmailAddress(email3));
         System.out.println(validateEmailAddress(email4));
         System.out.println(validateEmailAddress(email5));
-
     }
 
     ///////////////////////TASK-1/////////////////////////////
@@ -58,11 +57,12 @@ public class Project06 {
         int count = 0;
         for (String word : words) {
             word = word.trim();
-            if(Pattern.matches("[\\w ]+ [\\w ]+", word))
+            if(Pattern.matches("[a-zA-Z_ ]+ [a-zA-Z_ ]+", word))
              count++;
         }
         return count;
     }
+
     ///////////////////////TASK-2/////////////////////////////
     public static ArrayList<Integer> removeNegatives(ArrayList<Integer> numbers){
         ArrayList<Integer> results = new ArrayList<>();
@@ -75,8 +75,9 @@ public class Project06 {
 
     ///////////////////////TASK-3/////////////////////////////
     public static boolean validatePassword(String password){
-        return Pattern.matches("(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%*&!?+_])\\S{8,16}",password);
+        return Pattern.matches("(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%*&!?+~_])\\S{8,16}",password);
     }
+
     //////TASK-3/////for each loop//////OZGE solution//////////
     public static boolean isPassword(String password) {
 
@@ -94,7 +95,7 @@ public class Project06 {
                 uppercase = true;
             else if (Character.isDigit(c))
                 digit = true;
-            else if(Pattern.matches("[@#$%*&!?+_]", String.valueOf(c)))
+            else if(Pattern.matches("[@#$%*&!?+~_]", String.valueOf(c)))
                 special = true;
         }
         return (uppercase && lowercase && digit && special && password.length() >= 8 && password.length()<= 16);
