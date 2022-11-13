@@ -29,6 +29,14 @@ public class Project06 {
         System.out.println(validatePassword(password4));
         System.out.println(validatePassword(password5));
 
+        System.out.println("--------TASK-3-----OZGE---------");
+
+        System.out.println(isPassword(password1));
+        System.out.println(isPassword(password2));
+        System.out.println(isPassword(password3));
+        System.out.println(isPassword(password4));
+        System.out.println(isPassword(password5));
+
         System.out.println("--------------TASK-4--------------");
 
         String email1 = "a@gmail.com";
@@ -59,7 +67,7 @@ public class Project06 {
     public static ArrayList<Integer> removeNegatives(ArrayList<Integer> numbers){
         ArrayList<Integer> results = new ArrayList<>();
         for (Integer number : numbers) {
-            if(Pattern.matches("[\\d]{1,}", number.toString()))
+            if(Pattern.matches("\\d+", number.toString()))
                results.add(number);
         }
         return results;
@@ -67,12 +75,33 @@ public class Project06 {
 
     ///////////////////////TASK-3/////////////////////////////
     public static boolean validatePassword(String password){
-        return Pattern.matches("(?=.*[A-Z])(?=.*[a-z])(?=.*[\\d])(?=.*[@#$%*&!?+_])[\\S]{8,16}",password);
+        return Pattern.matches("(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%*&!?+_])\\S{8,16}",password);
+    }
+    //////TASK-3/////for each loop//////OZGE solution//////////
+    public static boolean isPassword(String password) {
+
+        boolean uppercase = false;
+        boolean lowercase = false;
+        boolean digit = false;
+        boolean special = false;
+
+        password = password.trim();
+
+        for(char c : password.toCharArray()){
+            if (Character.isLowerCase(c))
+                lowercase = true;
+            else if (Character.isUpperCase(c))
+                uppercase = true;
+            else if (Character.isDigit(c))
+                digit = true;
+            else if(Pattern.matches("[@#$%*&!?+_]", String.valueOf(c)))
+                special = true;
+        }
+        return (uppercase && lowercase && digit && special && password.length() >= 8 && password.length()<= 16);
     }
 
     ///////////////////////TASK-4/////////////////////////////
     public static boolean validateEmailAddress(String email){
-        return Pattern.matches("[\\w]{2,}@[\\w]{2,}\\.[\\w]{2,}", email);
+        return Pattern.matches("\\w{2,}@\\w{2,}\\.\\w{2,}", email);
     }
-
 }

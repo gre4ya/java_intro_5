@@ -2,8 +2,6 @@ package homeworks;
 
 import utilities.ScannerHelper;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -41,12 +39,12 @@ public class Homework08 {
 
         System.out.println("--------------TASK-4--------------");
 
-        str = "I go to TechGlobal";
-        str2 = "Hi, my name is John Doe";
-        str3 = "Hello guys";
-        System.out.println(count3OrLess(str));
-        System.out.println(count3OrLess(str2));
-        System.out.println(count3OrLess(str3));
+//        str = "I go to TechGlobal";
+//        str2 = "Hi, my name is John Doe";
+//        str3 = "Hello guys";
+        System.out.println(count3OrLess());
+        System.out.println(count3OrLess());
+        System.out.println(count3OrLess());
 
         System.out.println("--------------TASK-5--------------");
 
@@ -102,24 +100,22 @@ public class Homework08 {
         return newStr.substring(0, newStr.length()-1);
     }
     ///////////////////////TASK-4/////////////////////////////
-    public static int count3OrLess(String str){
-        str = ScannerHelper.getASentence();
+    public static int count3OrLess(){
+        String str = ScannerHelper.getASentence();
         String[] arr = str.split("[a-zA-Z]{4,}");
         Pattern p = Pattern.compile("[a-zA-Z]{1,3}");
         Matcher m = p.matcher(Arrays.toString(arr));
 
         int count = 0;
-        while (m.find()) {
-                count++;
-            }
+        while (m.find()) count++;
         return count;
     }
     ///////////////////////TASK-5/////////////////////////////
     public static  boolean isDateFormatValid(String dateOfBirth){
-        return Pattern.matches("[\\d]{2}/[\\d]{2}/[\\d]{4}", dateOfBirth);
+        return Pattern.matches("\\d{2}/\\d{2}/\\d{4}", dateOfBirth);
     }
     ///////////////////////TASK-6/////////////////////////////
     public static boolean isEmailFormatValid(String email){
-        return Pattern.matches("[\\w]{2,}@[\\w]{2,}\\.[\\w]{2,}", email);
+        return Pattern.matches("\\w{2,}@\\w{2,}\\.\\w{2,}", email);
     }
 }
