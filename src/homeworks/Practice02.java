@@ -17,5 +17,20 @@ public class Practice02 {
         }
         newStr += str;
         System.out.println(newStr);
+
+
+        str = "abbCCCddBBBxx";
+        int index = 0, freq = 0, count = 0;
+        char[] arr = str.toCharArray();
+        for (int o = 0, j = o + 1; o < arr.length - 1; o++, j++) {
+            if(arr[j] == arr[o]) count++;
+            if(count >= freq) {
+                index = o;
+                freq = count;
+                count = 0;
+            }
+        }
+        System.out.println(arr[index]);
+
     }
 }

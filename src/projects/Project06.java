@@ -60,6 +60,7 @@ public class Project06 {
             if(Pattern.matches("[a-zA-Z_ ]+ [a-zA-Z_ ]+", word))
              count++;
         }
+    // return (int) Arrays.stream(words).filter(w -> w.trim().matches("[a-zA-Z_ ]+ [a-zA-Z_ ]+")).count();
         return count;
     }
 
@@ -70,12 +71,17 @@ public class Project06 {
             if(Pattern.matches("\\d+", number.toString()))
                results.add(number);
         }
+        // numbers.removeIf(num -> num < 0);
+
+        // for (int i = 0; i < numbers.size(); i++) {
+        //     if(numbers.get(i) < 0) numbers.remove(i--);
+        // }
         return results;
     }
 
     ///////////////////////TASK-3/////////////////////////////
     public static boolean validatePassword(String password){
-        return Pattern.matches("(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%*&!?+~_])\\S{8,16}",password);
+        return password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%*&!?+~_])\\S${8,16}$");
     }
 
     //////TASK-3/////for each loop//////OZGE solution//////////
@@ -103,6 +109,6 @@ public class Project06 {
 
     ///////////////////////TASK-4/////////////////////////////
     public static boolean validateEmailAddress(String email){
-        return Pattern.matches("\\w{2,}@\\w{2,}\\.\\w{2,}", email);
+        return email.matches("\\w{2,}@\\w{2,}\\.\\w{2,}");
     }
 }

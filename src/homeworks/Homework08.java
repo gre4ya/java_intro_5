@@ -116,6 +116,6 @@ public class Homework08 {
     }
     ///////////////////////TASK-6/////////////////////////////
     public static boolean isEmailFormatValid(String email){
-        return Pattern.matches("\\w{2,}@\\w{2,}\\.\\w{2,}", email);
+        return Pattern.matches("\\w{2,}@[\\w.]{2,}\\.\\w{2,}", email);
     }
 }
