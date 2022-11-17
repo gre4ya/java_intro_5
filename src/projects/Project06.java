@@ -81,7 +81,7 @@ public class Project06 {
 
     ///////////////////////TASK-3/////////////////////////////
     public static boolean validatePassword(String password){
-        return password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%*&!?+~_])\\S${8,16}$");
+        return password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%*&!?+~_])\\S{8,16}$");
     }
 
     //////TASK-3/////for each loop//////OZGE solution//////////

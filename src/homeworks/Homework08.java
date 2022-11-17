@@ -112,10 +112,16 @@ public class Homework08 {
     }
     ///////////////////////TASK-5/////////////////////////////
     public static  boolean isDateFormatValid(String dateOfBirth){
-        return Pattern.matches("\\d{2}/\\d{2}/\\d{4}", dateOfBirth);
+        //return dateOfBirth.matches("[\\d]{2}/[\\d]{2}/[\\d]{4}");
+        return dateOfBirth.matches("([0][1-9]|[1][0-2])/" +                // month (01-12)
+                                         "([0][1-9]|[1-2][0-9]|[3][0-1])/" +     // day   (01-31)
+                                         "(19[0-9]{2}|20[0-1][0-9]|202[0-2])");  // year  (1900-2022)
     }
     ///////////////////////TASK-6/////////////////////////////
     public static boolean isEmailFormatValid(String email){
-        return Pattern.matches("\\w{2,}@[\\w.]{2,}\\.\\w{2,}", email);
+       // return email.matches("\\w{2,}@[\\w.]{2,}\\.\\w{2,}");
+        return email.matches("[\\w.#$-]{2,}@" +
+                                    "[\\w.]{2,}\\." +
+                                          "\\w{2,}");
     }
 }
