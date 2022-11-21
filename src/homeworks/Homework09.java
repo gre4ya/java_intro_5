@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 public class Homework09 {
     public static void main(String[] args) {
+
         System.out.println("-----------Task-1-----------");
 
         //int[] numbers = {-4, 0, -7, 0, 5, 10, 45, 45};
@@ -23,7 +24,6 @@ public class Homework09 {
             }
         }
         System.out.println(isFound ? firstDuplicate : "There is no duplicates");
-
 
         System.out.println("-----------Task-2-----------");
 
@@ -63,8 +63,8 @@ public class Homework09 {
 
         System.out.println("-----------Task-4-----------");
 
-        //String[] newWords = {"A", "foo", "12", "Foo", "bar", "a", "a", "java"};
-        String[] newWords = {"python", "foo", "bar", "java", "123"};
+        String[] newWords = {"A", "foo", "12", "Foo", "bar", "a", "a", "java"};
+        //String[] newWords = {"python", "foo", "bar", "java", "123"};
         String newDuplicate = "";
         for (int i = 0; i < newWords.length - 1; i++) {
             for (int j = i + 1; j < newWords.length; j++) {
@@ -95,10 +95,8 @@ public class Homework09 {
         String result = "";
         String[] str1 = str.split(" ");
         for (String s : str1) {
-            result += new StringBuilder(s).reverse().toString() + " ";
+            result += new StringBuilder(s).reverse() + " ";
         }
         System.out.println(result.substring(0, result.length()-1));
-
-
     }
 }

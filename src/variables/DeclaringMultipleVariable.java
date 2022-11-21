@@ -13,6 +13,5 @@ public class DeclaringMultipleVariable {
         double balance = 10.3;
 
 
-
     }
 }
