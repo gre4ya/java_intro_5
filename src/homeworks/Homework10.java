@@ -73,15 +73,12 @@ public class Homework10 {
         System.out.println(findClosestTo10(numbers6));
         System.out.println(findClosestTo10(numbers7));
         System.out.println(findClosestTo10(numbers8));
-
-
     }
 
     //-------------Task-1-----------------
 
     public static int countWords(String str){
-        String[] arr = str.trim().split("[ ]+");
-        return arr.length;
+        return str.trim().split("[ ]+").length;
     }
 
     //-------------Task-2-----------------
@@ -101,8 +98,7 @@ public class Homework10 {
 //        }
 //        return count;
 //--------------------------------------------------------------
-          str = str.toLowerCase().replaceAll("[\\W[^a]]", "");
-          return str.length();
+          return str.toLowerCase().replaceAll("[\\W[^a]]", "").length();
 
     }
 
@@ -173,5 +169,4 @@ public class Homework10 {
         }
         return closestTo10;
     }
-
 }
