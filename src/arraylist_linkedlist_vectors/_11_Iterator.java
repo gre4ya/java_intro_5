@@ -21,6 +21,7 @@ public class _11_Iterator {
             String food = foodsIterator.next();
             if(food.length() == 5)
                 foodsIterator.remove();
+            int max = Integer.MIN_VALUE;
         }
         System.out.println(foods);
     }

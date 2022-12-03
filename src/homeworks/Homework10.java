@@ -65,9 +65,9 @@ public class Homework10 {
         System.out.println("-------------Task-8-------------");
 
         int[] numbers5 = {10, -13, 5, 70, 15, 57};
-        int[] numbers6 = {10, -13, 8, 12, 15, -20};
+        int[] numbers6 = {10, -13, 12, 8, 15, -20};
         int[] numbers7 = {10, -13, 8, 12, 15, -20, 1, 4, 0};
-        int[] numbers8 = {10, -13, 8, 12, 15, -20, 11, 0, 2, 9};
+        int[] numbers8 = {11, 13, 18, 12, 15, 20, 100, 0, 19};
 
         System.out.println(findClosestTo10(numbers5));
         System.out.println(findClosestTo10(numbers6));
@@ -161,12 +161,24 @@ public class Homework10 {
     //-------------Task-8-----------------
 
     public static int findClosestTo10(int[] numbers){
-        int closestTo10 = numbers[0];
-
-        for (int number : numbers) {
-            if(number == 0) continue;
-            if(10 % number < closestTo10) closestTo10 = number;
+        int closest = Integer.MAX_VALUE;
+        boolean closestFound = false;
+        ArrayList<Integer> numsGreater10 = new ArrayList<>();
+        ArrayList<Integer> numsLess10 = new ArrayList<>();
+        for (int i = 0; i < numbers.length; i++) {
+            if(Math.abs(numbers[i] - 10) != 0 && Math.abs(numbers[i] - 10) < Math.abs(closest - 10)) {
+                closest = numbers[i];
+               // if(numbers[i] == )
+//                if(numbers[i] < 10) numsLess10.add(numbers[i]);
+//                else numsGreater10.add(numbers[i]);
+            }
         }
-        return closestTo10;
+//        Collections.sort(numsGreater10);
+//        Collections.sort(numsLess10);
+//        if(!numsLess10.isEmpty() && !numsGreater10.isEmpty())
+//        return Math.min(Collections.min(numsGreater10), numsLess10.get(Collections.max(numsLess10)));
+//        else if (!numsLess10.isEmpty()) return numsLess10.get(Collections.max(numsLess10));
+//        return Collections.min(numsGreater10);
+        return closest;
     }
 }
