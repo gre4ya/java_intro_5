@@ -65,6 +65,13 @@ public class Homework11 {
         return result;
     }
 
+    /////////////////TASK-8/////////////////
+    public static int countPrimes(int[] nums){
+        return (int)Arrays.stream(Arrays.stream(nums).toArray()).filter(
+                n -> n == 2 || n == 3 || n != 1 && n % 2 != 0 && n % 3 != 0
+                ).count();
+    }
+
 
 
 
@@ -150,6 +157,24 @@ public class Homework11 {
         System.out.println(Arrays.toString(noA(string)));
         string = new String[]{"apple", "appium", "ABC", "Alex", "A"};
         System.out.println(Arrays.toString(noA(string)));
+
+        System.out.println("----------Task-7----------");
+
+        int[] nums = new int[]{7, 4, 11, 23, 17};
+        System.out.println(Arrays.toString(no3or5(nums)));
+        nums = new int[]{3, 4, 5, 6};
+        System.out.println(Arrays.toString(no3or5(nums)));
+        nums = new int[]{10, 11, 12, 13, 14, 15};
+        System.out.println(Arrays.toString(no3or5(nums)));
+
+        System.out.println("----------Task-8----------");
+
+        nums = new int[]{-10, -3, 0, 1};
+        System.out.println(countPrimes(nums));
+        nums = new int[]{7, 4, 11, 23, 17};
+        System.out.println(countPrimes(nums));
+        nums = new int[]{41, 53, 19, 47, 67};
+        System.out.println(countPrimes(nums));
 
     }
 
