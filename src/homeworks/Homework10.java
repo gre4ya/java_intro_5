@@ -161,24 +161,21 @@ public class Homework10 {
     //-------------Task-8-----------------
 
     public static int findClosestTo10(int[] numbers){
-        int closest = Integer.MAX_VALUE;
-        boolean closestFound = false;
-        ArrayList<Integer> numsGreater10 = new ArrayList<>();
-        ArrayList<Integer> numsLess10 = new ArrayList<>();
+        Arrays.sort(numbers);
+        int numberBefore10=0;
+        int numberAfter10=0;
         for (int i = 0; i < numbers.length; i++) {
-            if(Math.abs(numbers[i] - 10) != 0 && Math.abs(numbers[i] - 10) < Math.abs(closest - 10)) {
-                closest = numbers[i];
-               // if(numbers[i] == )
-//                if(numbers[i] < 10) numsLess10.add(numbers[i]);
-//                else numsGreater10.add(numbers[i]);
-            }
+            if(numbers[i] < 10) numberBefore10 = numbers[i];
         }
-//        Collections.sort(numsGreater10);
-//        Collections.sort(numsLess10);
-//        if(!numsLess10.isEmpty() && !numsGreater10.isEmpty())
-//        return Math.min(Collections.min(numsGreater10), numsLess10.get(Collections.max(numsLess10)));
-//        else if (!numsLess10.isEmpty()) return numsLess10.get(Collections.max(numsLess10));
-//        return Collections.min(numsGreater10);
-        return closest;
+        for (int i = numbers.length-1; i > 0; i--) {
+            if(numbers[i] > 10) numberAfter10 = numbers[i];
+        }
+
+        if(numbers[0] >= 10) return numberAfter10;
+        else if(numbers[numbers.length-1] <= 10) return numberBefore10;
+        else {
+            if(Math.abs(10-numberBefore10) <= Math.abs(10-numberAfter10)) return numberBefore10;
+            else return numberAfter10;
+        }
     }
 }
