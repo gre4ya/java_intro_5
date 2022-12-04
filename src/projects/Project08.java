@@ -1,14 +1,12 @@
 package projects;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Objects;
+import java.util.*;
 
 public class Project08 {
 
     /////////////////TASK-1/////////////////
     public static int findClosestDistance(int[] nums) {
+
         int minDistance = Integer.MAX_VALUE;
         if (nums.length > 1) {
             for (int i = 0; i < nums.length; i++) {
@@ -23,61 +21,51 @@ public class Project08 {
 
     /////////////////TASK-2/////////////////
     public static int findSingleNumber(int[] nums) {
-        Arrays.sort(nums);
-        ArrayList<Integer> numbers = new ArrayList<>();
-        ArrayList<Integer> numbers2 = new ArrayList<>();
-        if (nums.length > 1) {
-            for (Integer num : nums) {
-                numbers.add(num);
+
+        for (int i = 0; i < nums.length; i++) {
+            int count = 0;
+            for (int j = 0; j < nums.length; j++) {
+                if(nums[i] == nums[j])
+                    count++;
             }
-            for (int i = 0; i < numbers.size() - 1; i++) {
-                for (int j = i + 1; j < numbers.size() - 1; j++) {
-                    if (numbers.get(i).equals(numbers.get(j)) && !numbers2.contains(numbers.get(i))) {
-                        numbers2.add(numbers.get(i));
-                        break;
-                    }
-                }
-            }
-            numbers.retainAll(numbers2);
-            return numbers.get(0);
+            if(count == 1) return nums[i];
         }
-        return nums[0];
+        return -1;
     }
 
     /////////////////TASK-3/////////////////
     public static char findFirstUniqueCharacter(String str){
-        char[] chars = str.toCharArray();
-        String duplicates = "";
-        char result = ' ';
-        for (int i = 1; i < chars.length; i++) {
-            for (int j = i + 1; j < chars.length; j++) {
-                if(chars[i] != chars[j] && !duplicates.contains(String.valueOf(chars[i]))) result = chars[i];
-                else {
-                    duplicates += chars[i];
+
+        for (int i = 0; i < str.length(); i++) {
+            boolean isUnique = true;
+            for (int j = 0; j < str.length(); j++) {
+                if (i != j && str.charAt(i) == str.charAt(j)) {
+                    isUnique = false;
                     break;
                 }
             }
+            if (isUnique)
+                return str.charAt(i);
         }
-        if(duplicates.isEmpty()) return ' ';
-        return result;
+        return ' ';
     }
 
     /////////////////TASK-4/////////////////
     public static int findMissingNumber(int[] nums){
+
         Arrays.sort(nums);
+        int result = 0;
         for (int i = 0; i < nums.length - 1; i++) {
-            if(Math.abs(nums[i] - nums[i+1]) == 2) return nums[i] + 1;
+            if(Math.abs(nums[i] - nums[i+1]) == 2) result = nums[i] + 1;
         }
-        return 0;
+        return result;
     }
-
-
 
     public static void main(String[] args) {
 
         System.out.println("----------Task-1----------");
 
-        int[] nums = new int[]{4};
+        int[] nums = {4};
         System.out.println(findClosestDistance(nums));
         nums = new int[]{4, 8, 7, 15};
         System.out.println(findClosestDistance(nums));
@@ -99,7 +87,6 @@ public class Project08 {
         System.out.println(findFirstUniqueCharacter(str));
         str = "abab";
         System.out.println(findFirstUniqueCharacter(str));
-
 
         System.out.println("----------Task-4----------");
         nums = new int[]{2, 4};
