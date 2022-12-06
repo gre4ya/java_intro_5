@@ -25,7 +25,7 @@ public class Homework11 {
     /////////////////TASK-3/////////////////
     public static boolean hasVowel(String str){
         str = str.toLowerCase();
-        return str.contains("a") || str.contains("e") || str.contains("o") || str.contains("u") || str.contains("i");
+       return str.contains("a") || str.contains("e") || str.contains("o") || str.contains("u") || str.contains("i");
     }
 
     /////////////////TASK-4/////////////////
