@@ -117,7 +117,7 @@ public class Homework12 {
         System.out.println("-----------------Task-7-----------------");
         System.out.println(Arrays.toString(arrFactorial(new int[]{1, 2, 3, 4})));
         System.out.println(Arrays.toString(arrFactorial(new int[]{0, 5})));
-        System.out.println(Arrays.toString(arrFactorial(new int[]{5 , 0, 6})));
+        System.out.println(Arrays.toString(arrFactorial(new int[]{5, 0, 6})));
         System.out.println(Arrays.toString(arrFactorial(new int[]{})));
 
         System.out.println("-----------------Task-8-----------------");
