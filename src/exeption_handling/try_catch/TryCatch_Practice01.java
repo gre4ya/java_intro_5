@@ -1,4 +1,4 @@
-package first_package;
+package exeption_handling.try_catch;
 
 import utilities.ScannerHelper;
 
@@ -15,8 +15,9 @@ public class TryCatch_Practice01 {
         try {
             System.out.println(name.charAt(3));
         }
-        catch (StringIndexOutOfBoundsException e1){
-            e1.printStackTrace();
+        catch (StringIndexOutOfBoundsException e){
+            e.printStackTrace();
+            //add to logger
         }
         System.out.println("Hello " + name);
     }
