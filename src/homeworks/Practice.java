@@ -30,7 +30,9 @@ public class Practice {
         ArrayList<String> STR1 = new ArrayList<>(Arrays.asList(str1.split(" ")));
         System.out.println(STR1);
 
-
+        int[] outer = {1, 2, 4, 6};
+        int[] inner = {2, 3, 4};
+        System.out.println(linearIn(outer, inner));
     }
 
 
@@ -64,4 +66,19 @@ public class Practice {
         }
         return newStr;
     }
+
+    public static boolean linearIn(int[] outer, int[] inner) {
+        if(inner.length == 0) return true;
+        boolean result = false;
+        String outerStr = Arrays.toString(outer);
+        outerStr = outerStr.replaceAll(",","").replaceAll(" ", "").replaceAll("\\[", "").replaceAll("\\]","");
+        for(int i = 0; i < inner.length; i++){
+            if(outerStr.contains(String.valueOf(inner[i]))) result = true;
+            else {
+                result = false;
+                break;
+            }
+        }
+        return result;
+}
 }
