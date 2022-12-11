@@ -10,16 +10,15 @@ public class UnderstandingRecursion {
         if(num == 0) return;
         printNumbersRecursively(num - 1);
         System.out.println(num);
-
     }
 
 
 
     public static void main(String[] args) {
-       //  print();  // StackOverflowError
 
-    printNumbersRecursively(6);
+        //  print();  // StackOverflowError
 
+        printNumbersRecursively(6);
 
     }
 }
