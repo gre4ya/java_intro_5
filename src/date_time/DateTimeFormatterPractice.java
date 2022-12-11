@@ -12,5 +12,4 @@ public class DateTimeFormatterPractice {
         System.out.println(localDateTime.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"))); // 12/11/2022
         System.out.println(localDateTime.format(DateTimeFormatter.ofPattern("E hh:mm a"))); // Sun 01:27 PM
     }
-
 }
