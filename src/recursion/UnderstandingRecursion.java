@@ -12,13 +12,8 @@ public class UnderstandingRecursion {
         System.out.println(num);
     }
 
-
-
     public static void main(String[] args) {
-
         //  print();  // StackOverflowError
-
         printNumbersRecursively(6);
-
     }
 }
