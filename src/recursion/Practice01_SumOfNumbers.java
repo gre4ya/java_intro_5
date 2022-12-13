@@ -1,6 +1,7 @@
 package recursion;
 
 public class Practice01_SumOfNumbers {
+
     /*
     Create a public static method called as sum
     It takes an int which is a positive number
@@ -44,6 +45,7 @@ public class Practice01_SumOfNumbers {
 
 
     public static void main(String[] args) {
+
         System.out.println(sum(5)); // 15
         System.out.println(sum(6)); // 21
         System.out.println(sum(8)); // 36
