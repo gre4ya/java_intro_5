@@ -13,18 +13,16 @@ public class Practice {
 
         String newStr = "";
         if (str.contains(word)) {
-            for (int i = 0; i < str.length() - word.length() + 1; i++) {
-                if (str.substring(i, i + word.length()).equals(word)) {
-
-                    newStr += word;
-                    i += word.length();
-                } else
-                    newStr += "+";
+          for (int i = 0; i < str.length() - word.length() + 1; i++) {
+            if (str.substring(i, i + word.length()).equals(word)) {
+              newStr += word;
+              i += word.length();
             }
+            else newStr += "+";
+          }
         }
 
         System.out.println(newStr);
-
 
         String str1 = "Hello World";
         ArrayList<String> STR1 = new ArrayList<>(Arrays.asList(str1.split(" ")));
@@ -42,31 +40,24 @@ public class Practice {
         if (str.length() < 3) return false;
         else if (str.length() == 3) return true;
         else {
-            if (str.length() % 2 != 0 && newStr.equals("xyz"))
-                return true;
-            else {
-                return (newStr.equals("xyz")) ;
-            }
+          if (str.length() % 2 != 0 && newStr.equals("xyz")) return true;
+          else return (newStr.equals("xyz")) ;
         }
-
     }
-
 
     public static String plusOut(String str, String word) {
         String newStr = "";
         if (str.contains(word)) {
-            for (int i = 0; i < str.length() - word.length() + 1; i++) {
-                if (str.substring(i, i + word.length()).equals(word)) {
-
-                    newStr += word;
-                    i += word.length();
-                } else
-                    newStr += "+";
-            }
+          for (int i = 0; i < str.length() - word.length() + 1; i++) {
+            if (str.substring(i, i + word.length()).equals(word)) {
+              newStr += word;
+              i += word.length();
+              }
+            else newStr += "+";
+          }
         }
         return newStr;
     }
-
     public static boolean linearIn(int[] outer, int[] inner) {
         if(inner.length == 0) return true;
         boolean result = false;
