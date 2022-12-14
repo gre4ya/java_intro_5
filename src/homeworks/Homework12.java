@@ -16,9 +16,14 @@ public class Homework12 {
     /////////////////////TASK 3/////////////////////
     public static int sumOfDigits(String str){
        int sum = 0;
+//        for (int i = 0; i < str.length(); i++) {
+//            if(Character.isDigit(str.charAt(i)))
+//                sum += Integer.parseInt(String.valueOf(str.charAt(i)));
+//        }
+//        return sum;
         for (int i = 0; i < str.length(); i++) {
             if(Character.isDigit(str.charAt(i)))
-                sum += Integer.parseInt(String.valueOf(str.charAt(i)));
+                sum += Character.getNumericValue(str.charAt(i));
         }
         return sum;
     }
@@ -31,9 +36,9 @@ public class Homework12 {
     }
     /////////////////////TASK 5/////////////////////
     public static int middleInt(int a, int b, int c){
-        int[] nums = {a, b, c};
+       int[] nums = {a, b, c};
        Arrays.sort(nums);
-        return nums[1];
+       return nums[1];
     }
     /////////////////////TASK 6/////////////////////
     public static int[] no13(int[] arr){
