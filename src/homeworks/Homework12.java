@@ -8,12 +8,11 @@ public class Homework12 {
     public static String noDigit(String str){
         return str.replaceAll("\\d", "");
     }
-
     /////////////////////TASK 2/////////////////////
     public static String noVowel(String str){
-        return str.replaceAll("a|A|o|O|u|U|i|I|e|E", "");
+        //return str.replaceAll("a|A|o|O|u|U|i|I|e|E", "");
+        return str.replaceAll("[aAoOuUiIeE]", "");
     }
-
     /////////////////////TASK 3/////////////////////
     public static int sumOfDigits(String str){
        int sum = 0;
@@ -23,7 +22,6 @@ public class Homework12 {
         }
         return sum;
     }
-
     /////////////////////TASK 4/////////////////////
     public static boolean hasUpperCase(String str){
         for (int i = 0; i < str.length(); i++) {
@@ -31,36 +29,28 @@ public class Homework12 {
         }
         return false;
     }
-
     /////////////////////TASK 5/////////////////////
     public static int middleInt(int a, int b, int c){
         int[] nums = {a, b, c};
        Arrays.sort(nums);
         return nums[1];
     }
-
     /////////////////////TASK 6/////////////////////
     public static int[] no13(int[] arr){
-        int[] result = new int[arr.length];
-
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] != 13) result[i] = arr[i];
-            else result[i] = 0;
+            if(arr[i] == 13) arr[i] = 0;
         }
-        return result;
+        return arr;
     }
-
     /////////////////////TASK 7/////////////////////
     public static int[] arrFactorial(int[] arr) {
-        int[] result = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
             int value = 1;
             for (int j = 1; j <= arr[i]; j++) value *= j;
-            result[i] = value;
+            arr[i] = value;
         }
-        return result;
+        return arr;
     }
-
     /////////////////////TASK 8/////////////////////
     public static String[] categorizeCharacters(String str){
         String[] result = {"","",""};
@@ -73,11 +63,8 @@ public class Homework12 {
 //        return new String[]{
 //                            str.replaceAll("[^a-zA-Z]",""),
 //                            str.replaceAll("[^0-9]",""),
-//                            str.replaceAll("[a-zA-Z0-9 ]",""),
-//                           };
+//                            str.replaceAll("[a-zA-Z0-9 ]","")};
     }
-
-
     public static void main(String[] args) {
 
         System.out.println("-----------------Task-1-----------------");
