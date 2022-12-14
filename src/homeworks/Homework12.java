@@ -64,13 +64,17 @@ public class Homework12 {
     /////////////////////TASK 8/////////////////////
     public static String[] categorizeCharacters(String str){
         String[] result = {"","",""};
-        str = str.trim();
         for (int i = 0; i < str.length(); i++) {
             if(Character.isLetter(str.charAt(i))) result[0] += str.charAt(i);
             else if (Character.isDigit(str.charAt(i))) result[1] += str.charAt(i);
             else if (!Character.isWhitespace(str.charAt(i))) result[2] += str.charAt(i);
         }
         return result;
+//        return new String[]{
+//                            str.replaceAll("[^a-zA-Z]",""),
+//                            str.replaceAll("[^0-9]",""),
+//                            str.replaceAll("[a-zA-Z0-9 ]",""),
+//                           };
     }
 
 
