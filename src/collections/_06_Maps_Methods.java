@@ -69,5 +69,13 @@ public class _06_Maps_Methods {
             System.out.println(s);
         }
 
+        System.out.println("---------getting all the entries------------");
+        Set<Map.Entry<String, String>> entries = capitals.entrySet();
+        for (Map.Entry<String, String> entry : entries) {
+            System.out.println(entry);
+            System.out.println("Key=" + entry.getKey() +
+                            "\nValue=" + entry.getValue() + "\n");
+        }
+
     }
 }
