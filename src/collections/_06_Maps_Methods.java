@@ -1,6 +1,6 @@
 package collections;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class _06_Maps_Methods {
     public static void main(String[] args) {
@@ -36,6 +36,38 @@ public class _06_Maps_Methods {
 
         capitals.put("Turkey", "Istanbul");
         System.out.println(capitals); // {Turkey=Istanbul, Italy=Rome, France=Paris, Germany=Munich, Spain=Madrid}
+
+        System.out.println("---------remove some entries-----------");
+        capitals.remove("France");
+        System.out.println(capitals); // Turkey=Istanbul, Italy=Rome, Germany=Munich, Spain=Madrid}
+
+        capitals.remove("US"); // null
+        capitals.remove("Germany", "Stuttgart"); // false
+        System.out.println(capitals); // {Turkey=Istanbul, Italy=Rome, Germany=Munich, Spain=Madrid}
+
+        System.out.println(capitals.remove("Germany", "Munich")); // true
+        System.out.println(capitals); // Turkey=Istanbul, Italy=Rome, Spain=Madrid}
+
+        System.out.println("----------Advanced Map methods---------");
+
+        //Keys: Turkey, Italy, Spain
+        //Values: Istanbul, Rome, Madrid
+
+        Set<String> set = capitals.keySet();
+        System.out.println(set); // [Turkey, Italy, Spain]
+        TreeSet<String> treeSet = new TreeSet<>(set);
+        System.out.println(treeSet); // [Italy, Spain, Turkey]
+
+        Collection<String> collection = capitals.values();
+        System.out.println(collection); // [Istanbul, Rome, Madrid]
+
+        ArrayList<String> list = new ArrayList<>(capitals.values());
+
+        System.out.println("---------iterating key and values-------------");
+
+        for (String s : capitals.keySet()) {
+            System.out.println(s);
+        }
 
     }
 }
