@@ -2,7 +2,6 @@ package collections;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 
 public class _05_Maps {
     public static void main(String[] args) {
