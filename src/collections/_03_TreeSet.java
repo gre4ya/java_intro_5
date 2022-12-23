@@ -26,13 +26,13 @@ public class _03_TreeSet {
         numbers.add(2);
         numbers.add(7);
         numbers.add(10);
-        System.out.println(numbers);
+        System.out.println(numbers); // [1, 2, 3, 7, 10]
 
-        System.out.println(numbers.first());
-        System.out.println(numbers);
+        System.out.println(numbers.first()); // 1
+        System.out.println(numbers); // [1, 2, 3, 7, 10]
 
-        System.out.println(numbers.pollFirst());
-        System.out.println(numbers);
+        System.out.println(numbers.pollFirst()); // 1
+        System.out.println(numbers); // [2, 3, 7, 10]
 
         numbers.clear();
         System.out.println(numbers.pollFirst()); // null
