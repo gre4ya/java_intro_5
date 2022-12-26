@@ -14,7 +14,7 @@ public class Practice01_RemoveDuplicates {
 
 
     public static Integer[] removeDuplicates(Integer[] arr){
-        return new LinkedHashSet<>(Arrays.asList(arr)).toArray(new LinkedHashSet<>(Arrays.asList(arr)).toArray(new Integer[0]));
+        return new LinkedHashSet<>(Arrays.asList(arr)).toArray(new Integer[0]);
     }
 
     /*
