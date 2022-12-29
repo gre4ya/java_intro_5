@@ -53,10 +53,21 @@ public class Homework13 {
 
         System.out.println("---------------Task-8---------------");
 
-        System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java", "is", "fun")), new ArrayList<>(Arrays.asList("abc", "xyz", "123"))));
-        System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java", "is", "fun")), new ArrayList<>(Arrays.asList("Java", "C#", "Python"))));
-        System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java", "C#", "C#")), new ArrayList<>(Arrays.asList("Python", "C#", "C++"))));
+        System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java", "is", "fun")),
+                                                  new ArrayList<>(Arrays.asList("abc", "xyz", "123"))));
 
+        System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java", "is", "fun")),
+                                                  new ArrayList<>(Arrays.asList("Java", "C#", "Python"))));
+
+        System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java", "C#", "C#")),
+                                                  new ArrayList<>(Arrays.asList("Python", "C#", "C++"))));
+
+        System.out.println("---------------Task-9---------------");
+
+        System.out.println(noXInVariables(new ArrayList<>(Arrays.asList("abc", "123", "#$%"))));
+        System.out.println(noXInVariables(new ArrayList<>(Arrays.asList("xyz", "123", "#$%"))));
+        System.out.println(noXInVariables(new ArrayList<>(Arrays.asList("x", "123", "#$%"))));
+        System.out.println(noXInVariables(new ArrayList<>(Arrays.asList("xyXyxy", "Xx", "ABC"))));
 
     }
     ///////////////////////Task-1///////////////////////
@@ -137,6 +148,13 @@ public class Homework13 {
         }
         return result;
     }
-
-
+    ///////////////////////Task-9///////////////////////
+    public static ArrayList<String> noXInVariables(ArrayList<String> list){
+        ArrayList<String> result = new ArrayList<>();
+        for (String s : list) {
+            result.add(s.replaceAll("[xX]",""));
+        }
+        result.remove("");
+        return result;
+    }
 }
