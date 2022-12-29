@@ -2,6 +2,7 @@ package homeworks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 
 public class Homework13 {
     public static void main(String[] args) {
@@ -45,6 +46,16 @@ public class Homework13 {
         System.out.println(removeStringSpecialsDigits("Selenium 123#$%Cypress"));
 
         System.out.println("---------------Task-7---------------");
+
+        System.out.println(Arrays.toString(removeArraySpecialsDigits(new String[]{"123Java", "#$%is", "fun"})));
+        System.out.println(Arrays.toString(removeArraySpecialsDigits(new String[]{"Selenium", "123$%", "###"})));
+        System.out.println(Arrays.toString(removeArraySpecialsDigits(new String[]{"Selenium", "123#$%Cypress"})));
+
+        System.out.println("---------------Task-8---------------");
+
+        System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java", "is", "fun")), new ArrayList<>(Arrays.asList("abc", "xyz", "123"))));
+        System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java", "is", "fun")), new ArrayList<>(Arrays.asList("Java", "C#", "Python"))));
+        System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java", "C#", "C#")), new ArrayList<>(Arrays.asList("Python", "C#", "C++"))));
 
 
     }
@@ -108,5 +119,24 @@ public class Homework13 {
         }
         return result;
     }
+    ///////////////////////Task-7///////////////////////
+    public static String[] removeArraySpecialsDigits(String[] arr){
+        String[] result = new String[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = removeStringSpecialsDigits(arr[i]);
+        }
+        return result;
+    }
+    ///////////////////////Task-8///////////////////////
+    public static ArrayList<String> removeAndReturnCommons(ArrayList<String> arr1, ArrayList<String> arr2){
+        LinkedHashSet<String> set1 = new LinkedHashSet<>(arr1);
+        LinkedHashSet<String> set2 = new LinkedHashSet<>(arr2);
+        ArrayList<String> result = new ArrayList<>();
+        for (String set : set1) {
+            if(set2.contains(set)) result.add(set);
+        }
+        return result;
+    }
+
 
 }
