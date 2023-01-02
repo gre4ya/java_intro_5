@@ -1,5 +1,6 @@
 package homeworks;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
@@ -97,6 +98,8 @@ public class Homework13 {
     }
     ///////////////////////Task-4///////////////////////
     public static boolean containsValue(String[] arr, String str){
+    /////////////////solution-1///////////////////////////
+        /*
         boolean result = false;
         for (String s : arr) {
             if(s.equals(str)){
@@ -105,6 +108,15 @@ public class Homework13 {
             }
         }
         return result;
+         */
+    /////////////////solution-2//////////////////////////
+        /*
+        Arrays.sort(arr);
+        return Arrays.binarySearch(arr, str) >= 0;
+        */
+    /////////////////solution-3/////////////////////////
+        return Arrays.asList(arr).contains(str);
+
     }
     ///////////////////////Task-5///////////////////////
     public static String reverseSentence(String str){
@@ -112,16 +124,19 @@ public class Homework13 {
         String result = "";
         if(!str.contains(" ")) return "There is not enough words!";
         else{
-            String[] arr = str.split(" ");
-            for (int i = arr.length - 1; i >= 0; i--) {
+            String[] arr = str.split("[ ]+");
+            result += arr[arr.length-1].substring(0,1).toUpperCase() + arr[arr.length-1].substring(1) + " ";
+            for (int i = arr.length - 2; i >= 1; i--) {
                 result += arr[i] + " ";
             }
+            result += arr[0].toLowerCase();
         }
-        result = result.substring(0,1).toUpperCase().concat(result.substring(1,result.length() - 1));
         return result;
     }
     ///////////////////////Task-6///////////////////////
     public static String removeStringSpecialsDigits(String str){
+        return str.replaceAll("[^a-zA-Z ]", "");
+    /*
         String result = "";
         char[] arr = str.toCharArray();
         for (int i = 0; i < arr.length; i++) {
@@ -129,14 +144,16 @@ public class Homework13 {
                 result += arr[i];
         }
         return result;
+    */
     }
+
     ///////////////////////Task-7///////////////////////
     public static String[] removeArraySpecialsDigits(String[] arr){
-        String[] result = new String[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            result[i] = removeStringSpecialsDigits(arr[i]);
+           // arr[i] = removeStringSpecialsDigits(arr[i]);
+            arr[i] = arr[i].replaceAll("[^a-zA-Z ]", "");
         }
-        return result;
+        return arr;
     }
     ///////////////////////Task-8///////////////////////
     public static ArrayList<String> removeAndReturnCommons(ArrayList<String> arr1, ArrayList<String> arr2){
