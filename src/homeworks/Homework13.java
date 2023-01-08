@@ -17,10 +17,10 @@ public class Homework13 {
 
         System.out.println("---------------Task-2---------------");
 
-        System.out.println(noZero(new ArrayList<Integer>(Arrays.asList(1))));
-        System.out.println(noZero(new ArrayList<Integer>(Arrays.asList(1, 1, 10))));
-        System.out.println(noZero(new ArrayList<Integer>(Arrays.asList(0, 1, 10))));
-        System.out.println(noZero(new ArrayList<Integer>(Arrays.asList(0, 0, 0))));
+        System.out.println(noZero(new ArrayList<>(Arrays.asList(1))));
+        System.out.println(noZero(new ArrayList<>(Arrays.asList(1, 1, 10))));
+        System.out.println(noZero(new ArrayList<>(Arrays.asList(0, 1, 10))));
+        System.out.println(noZero(new ArrayList<>(Arrays.asList(0, 0, 0))));
 
         System.out.println("---------------Task-3---------------");
 
