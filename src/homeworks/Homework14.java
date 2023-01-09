@@ -24,7 +24,7 @@ public class Homework14 {
     public static int findSumNumbers(String str){
         try{
             int sum = 0;
-            String[] arr = str.replaceAll("[^0-9]+", " ").trim().split("[ ]+");
+            String[] arr = str.replaceAll("[^0-9]", " ").trim().split("[ ]+");
             for (String s : arr) {
                 sum += Integer.parseInt(s);
             }
@@ -37,7 +37,7 @@ public class Homework14 {
     ///////////////////////Task-4///////////////////////
     public static int findBiggestNumber(String str){
         try{
-            String[] arr = str.replaceAll("[^0-9]+", " ").trim().split("[ ]+");
+            String[] arr = str.replaceAll("[^0-9]", " ").trim().split("[ ]+");
             int[] nums = new int[arr.length];
             for (int i = 0; i < arr.length; i++) {
                 nums[i] = Integer.parseInt(arr[i]);
@@ -100,7 +100,7 @@ public class Homework14 {
 
         System.out.println(countSequenceOfCharacters(""));
         System.out.println(countSequenceOfCharacters("abc"));
-        System.out.println(countSequenceOfCharacters("abbcca"));
+        System.out.println(countSequenceOfCharacters("abbccaaa"));
         System.out.println(countSequenceOfCharacters("aaAAa"));
 
     }
